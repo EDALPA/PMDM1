@@ -6,6 +6,7 @@ fun main() {
     printStringLength(null)
     exercise1()
     exercise2()
+    println(exercise3(19503863))
     //println("Concatenation: " + concatenate("hello", null))
 }
 
@@ -16,6 +17,8 @@ fun main() {
 // https://kotlinlang.org/docs/reference/control-flow.html
 
 fun exercise1(){
+    println("\n**Exercise 1**")
+
     for(i in 1..10){
         println(i)
     }
@@ -23,6 +26,7 @@ fun exercise1(){
 
 // TODO: 2.- Uncomment this function:
 fun exercise2() {
+    println("\n**Exercise 2**")
     var month = 1
     while(month != 0) {
         println("Enter the number of the month (0 to finish)")
@@ -56,6 +60,38 @@ fun exercise2() {
 // that represents the corresponding NIF (number + letter)
 // https://www.ordenacionjuego.es/en/calculo-digito-control
 // https://kotlinlang.org/docs/reference/basic-types.html#arrays
+
+fun exercise3 (number: Int): String {
+    println("\n**Exercise 3**")
+    println("Input number: "+number)
+    var letter : String = "NIF: "+number.toString()
+    when (number%23) {
+        0-> letter += "T"
+        1-> letter += "R"
+        2-> letter += "W"
+        3-> letter += "A"
+        4-> letter += "G"
+        5-> letter += "M"
+        6-> letter += "Y"
+        7-> letter += "F"
+        8-> letter += "P"
+        9-> letter += "D"
+        10-> letter += "X"
+        11-> letter += "B"
+        12-> letter += "N"
+        13-> letter += "J"
+        14-> letter += "Z"
+        15-> letter += "S"
+        16-> letter += "Q"
+        17-> letter += "V"
+        18-> letter += "H"
+        19-> letter += "L"
+        20-> letter += "C"
+        21-> letter += "K"
+        22-> letter += "E"
+    }
+    return letter
+}
 
 // TODO: 4 Modify this function abbreviating it with "=" as return type
 // (simplification 2)
