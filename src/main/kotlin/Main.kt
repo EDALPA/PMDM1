@@ -2,14 +2,18 @@ import javax.swing.tree.RowMapper
 
 fun main() {
     println("Hello World.")
-    println("number of a's = " + countAs("Mary got married"))
-    assignReadersToBooks()
-    printStringLength("This is a test")
-    printStringLength(null)
     exercise1()
     exercise2()
     println(exercise3(19503863))
+    println("\n**Exercise 4**\nnumber of a's = " + countAs("Mary got married"))
     exercise5("Mary got married")
+    assignReadersToBooks()
+    printStringLength("This is a test")
+    printStringLength(null)
+
+
+
+
     //println("Concatenation: " + concatenate("hello", null))
 }
 
@@ -135,14 +139,20 @@ data class Reader(val name: String, val age: Int)
 // TODO 6: Create a data class Book that has 2 parameters
 // title as a String that can not be modified (read only)
 // and reader as a Reader
-fun assignReadersToBooks() {
-    val reader1 = Reader("John", 23)
-    val reader2 = Reader("Mary", 34)
+data class Book(val title : String, var reader : Reader)
 
+fun assignReadersToBooks() {
+    println("\n**Exerceise 6**")
+    val reader1 = Reader("John", 23)
+    println("Reader 1: "+reader1.toString())
+    val reader2 = Reader("Mary", 34)
+    println("Reader 2: "+reader2.toString())
 
     // TODO 6: Uncomment these sentences
-    // val book1 = Book("The name of the wind", reader1)
-    // book1.reader = reader2
+    val book1 = Book("The name of the wind", reader1)
+    println("Book 1: "+book1.toString())
+    book1.reader = reader2
+    println("Book 2: "+book1.toString())
 }
 
 // TODO 7: Write the body of this function
