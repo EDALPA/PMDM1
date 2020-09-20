@@ -5,6 +5,7 @@ fun main() {
     printStringLength("This is a test")
     printStringLength(null)
     exercise1()
+    exercise2()
     //println("Concatenation: " + concatenate("hello", null))
 }
 
@@ -21,7 +22,7 @@ fun exercise1(){
 }
 
 // TODO: 2.- Uncomment this function:
- /* fun exercise2() {
+fun exercise2() {
     var month = 1
     while(month != 0) {
         println("Enter the number of the month (0 to finish)")
@@ -33,10 +34,23 @@ fun exercise1(){
             // https://kotlinlang.org/docs/reference/control-flow.html
             // take into account that some months have 30, others 31 and one 28 or 29.
             // Invoke the function from main()
+            fun p(str: String){
+                println(str)
+            }
+            when (month){
+                2 -> p("28")
+                4,6,9,10,11 -> p("30")
+                1,3,5,7,8,12 -> p("31")
+                else -> if (month > 12){
+                    p("There are only 12 months!\n")
+                    month = 1
+                }
+            }
         }
     }
 }
-*/
+
+
 // TODO: 3 Write a function called exercise3()
 // that accepts a  number and returns a String
 // that represents the corresponding NIF (number + letter)
