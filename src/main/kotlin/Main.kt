@@ -4,6 +4,7 @@ fun main() {
     assignReadersToBooks()
     printStringLength("This is a test")
     printStringLength(null)
+    exercise1()
     //println("Concatenation: " + concatenate("hello", null))
 }
 
@@ -13,8 +14,14 @@ fun main() {
 // Look for how to make a “for” loop here:
 // https://kotlinlang.org/docs/reference/control-flow.html
 
+fun exercise1(){
+    for(i in 1..10){
+        println(i)
+    }
+}
+
 // TODO: 2.- Uncomment this function:
-/* fun exercise2() {
+ /* fun exercise2() {
     var month = 1
     while(month != 0) {
         println("Enter the number of the month (0 to finish)")
@@ -28,8 +35,8 @@ fun main() {
             // Invoke the function from main()
         }
     }
-} */
-
+}
+*/
 // TODO: 3 Write a function called exercise3()
 // that accepts a  number and returns a String
 // that represents the corresponding NIF (number + letter)
