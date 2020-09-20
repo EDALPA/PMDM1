@@ -11,11 +11,7 @@ fun main() {
     println("\n**Exercise 7**")
     printStringLength("This is a test")
     printStringLength(null)
-
-
-
-
-    //println("Concatenation: " + concatenate("hello", null))
+    println("Concatenation: " + concatenate("hello", null))
 }
 
 // TODO: 1.- Write a function called exercise1()
@@ -131,8 +127,8 @@ fun stringMapper(str: String, mapper: (String) -> Int) = mapper(str)
 
 fun exercise5(str : String){
     println("\n**Exercise 5**\nText: "+str)
-    println("Number of characters: "+stringMapper(str, {str -> str.length}))
-    println("Number of a's: "+stringMapper(str, {str -> str.count{c -> c == 'a'}}))
+    println("Number of characters: "+stringMapper(str) { str -> str.length })
+    println("Number of a's: "+stringMapper(str) { str -> str.count { c -> c == 'a' } })
 
 }
 
@@ -143,7 +139,7 @@ data class Reader(val name: String, val age: Int)
 data class Book(val title : String, var reader : Reader)
 
 fun assignReadersToBooks() {
-    println("\n**Exerceise 6**")
+    println("\n**Exercise 6**")
     val reader1 = Reader("John", 23)
     println("Reader 1: "+reader1.toString())
     val reader2 = Reader("Mary", 34)
@@ -161,7 +157,7 @@ fun assignReadersToBooks() {
 // If the string is null, print 0
 fun printStringLength(string: String?) {
 
-    println("Input text: "+string ?: 0)
+    println("Input text: "+(string ?: 0))
 
 }
 
@@ -170,3 +166,8 @@ fun printStringLength(string: String?) {
 // If a String is null, convert it to “”.
 // This is the invocation:
 // println("Concatenation: " + concatenate("hello", null))
+
+fun concatenate(s1 : String?, s2 : String?) : String{
+    println("\n**Exercise 8**")
+    return (s1 ?: "") + (s2 ?: "")
+}
