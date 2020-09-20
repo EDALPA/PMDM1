@@ -9,6 +9,7 @@ fun main() {
     exercise1()
     exercise2()
     println(exercise3(19503863))
+    exercise5("Mary got married")
     //println("Concatenation: " + concatenate("hello", null))
 }
 
@@ -123,6 +124,12 @@ fun stringMapper(str: String, mapper: (String) -> Int) = mapper(str)
 // and the second one with a function that returns the number of a’s.
 // Print its results.
 
+fun exercise5(str : String){
+    println("\n**Exercise 5**\nText: "+str)
+    println("Number of characters: "+stringMapper(str, {str -> str.length}))
+    println("Number of a's: "+stringMapper(str, {str -> str.count{c -> c == 'a'}}))
+
+}
 
 data class Reader(val name: String, val age: Int)
 // TODO 6: Create a data class Book that has 2 parameters
@@ -131,6 +138,8 @@ data class Reader(val name: String, val age: Int)
 fun assignReadersToBooks() {
     val reader1 = Reader("John", 23)
     val reader2 = Reader("Mary", 34)
+
+
     // TODO 6: Uncomment these sentences
     // val book1 = Book("The name of the wind", reader1)
     // book1.reader = reader2
