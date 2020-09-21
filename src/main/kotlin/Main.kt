@@ -20,10 +20,10 @@ fun main() {
 // Look for how to make a “for” loop here:
 // https://kotlinlang.org/docs/reference/control-flow.html
 
-fun exercise1(){
+fun exercise1() {
     println("\n**Exercise 1**")
 
-    for(i in 1..10){
+    for(i in 1..10) {
         println(i)
     }
 }
@@ -42,14 +42,14 @@ fun exercise2() {
             // https://kotlinlang.org/docs/reference/control-flow.html
             // take into account that some months have 30, others 31 and one 28 or 29.
             // Invoke the function from main()
-            fun p(str: String){
+            fun p(str: String) {
                 println(str)
             }
-            when (month){
+            when (month) {
                 2 -> p("28")
-                4,6,9,10,11 -> p("30")
-                1,3,5,7,8,12 -> p("31")
-                else -> if (month > 12){
+                4, 6, 9, 10, 11 -> p("30")
+                1, 3, 5, 7, 8, 12 -> p("31")
+                else -> if (month > 12) {
                     p("There are only 12 months!\n")
                     month = 1
                 }
@@ -69,7 +69,10 @@ fun exercise3 (number: Int): String {
     println("\n**Exercise 3**")
     println("Input number: "+number)
     var letter : String = "NIF: "+number.toString()
-    when (number%23) {
+    val LETTERS = arrayOf("T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E")
+    return LETTERS[number % 23]
+    // This is better
+    /*when (number%23) {
         0-> letter += "T"
         1-> letter += "R"
         2-> letter += "W"
@@ -94,7 +97,7 @@ fun exercise3 (number: Int): String {
         21-> letter += "K"
         22-> letter += "E"
     }
-    return letter
+    return letter */
 }
 
 // TODO: 4 Modify this function abbreviating it with "=" as return type
@@ -141,15 +144,15 @@ data class Book(val title : String, var reader : Reader)
 fun assignReadersToBooks() {
     println("\n**Exercise 6**")
     val reader1 = Reader("John", 23)
-    println("Reader 1: "+reader1.toString())
+    println("Reader 1: " + reader1.toString())
     val reader2 = Reader("Mary", 34)
-    println("Reader 2: "+reader2.toString())
+    println("Reader 2: " + reader2.toString())
 
     // TODO 6: Uncomment these sentences
     val book1 = Book("The name of the wind", reader1)
-    println("Book 1: "+book1.toString())
+    println("Book 1: " + book1.toString())
     book1.reader = reader2
-    println("Book 2: "+book1.toString())
+    println("Book 2: " + book1.toString())
 }
 
 // TODO 7: Write the body of this function
@@ -157,7 +160,7 @@ fun assignReadersToBooks() {
 // If the string is null, print 0
 fun printStringLength(string: String?) {
 
-    println("Input text: "+(string ?: 0))
+    println("Input text: " + (string ?: 0))
 
 }
 
@@ -167,7 +170,7 @@ fun printStringLength(string: String?) {
 // This is the invocation:
 // println("Concatenation: " + concatenate("hello", null))
 
-fun concatenate(s1 : String?, s2 : String?) : String{
+fun concatenate(s1 : String?, s2 : String?) : String {
     println("\n**Exercise 8**")
     return (s1 ?: "") + (s2 ?: "")
 }
